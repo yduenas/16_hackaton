@@ -57,10 +57,12 @@ export default createStore({
 			contactos.results.forEach(async (pokemon) => {
 				const data = await fetch(pokemon.url); //'http://localhost:3000/contactos'
 				let contacto = await data.json();
-				arrayPokemones.push(contacto);
+				//	arrayPokemones.push(contacto);
+				arrayPokemones = [...arrayPokemones, contacto];
+				commit('setContactosMutation', arrayPokemones);
 				//console.log(contacto);
 			});
-			commit('setContactosMutation', arrayPokemones);
+
 			//	this.contactos = info;
 
 			console.log(arrayPokemones);

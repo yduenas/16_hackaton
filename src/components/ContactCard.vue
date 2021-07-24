@@ -1,10 +1,26 @@
 <template>
 	<div>
 		<div class="row">
+			<div class="col-6">
+				<input type="text" name="" id="" class="form-control" />
+			</div>
+			<div class="col-6">
+				<input
+					type="button"
+					name=""
+					id=""
+					class="btn btn-primary"
+					value="buscar"
+				/>
+			</div>
+		</div>
+		<br />
+
+		<div class="row">
 			<!--producto				
 				@click="detalle(index, contacto.id)"
 			-->
-			<table id="example" class="table table-striped" style="width:100%">
+			<!-- <table id="example" class="table table-striped" style="width:100%">
 				<thead>
 					<tr>
 						<th>POKEMON</th>
@@ -44,8 +60,9 @@
 						<th>ACCION</th>
 					</tr>
 				</tfoot>
-			</table>
+			</table> -->
 			<!-- {{ JSON.stringify(contacto) }} -->
+
 			<div
 				class="item col-md-3 col-6"
 				v-for="(contacto, index) in contactos"
