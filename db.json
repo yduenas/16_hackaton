@@ -1,0 +1,124 @@
+{
+  "contactos": [
+    {
+      "id": 1,
+      "nombre": "Ryan Duenas",
+      "url": "./img/silueta.jpg",
+      "telefono": "123 456 789",
+      "correo": "ryan@gmail.com",
+      "pais": "Peru",
+      "about": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "visualizaciones": 0
+    },
+    {
+      "id": 2,
+      "nombre": "Jesus Duenas",
+      "url": "./img/silueta.jpg",
+      "telefono": "223 456 789",
+      "correo": "jesus@gmail.com",
+      "pais": "Peru",
+      "about": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "visualizaciones": 0
+    },
+    {
+      "nombre": "Claudia",
+      "visualizaciones": 0,
+      "url": "./img/silueta.jpg",
+      "telefono": "4325432",
+      "correo": "CLAUDIA@CROREE.COM",
+      "pais": "DSAF",
+      "about": "ADSFA",
+      "id": 3
+    },
+    {
+      "id": 5,
+      "nombre": "Soledad",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "54356",
+      "correo": "sole@gamil.com",
+      "pais": "Peru",
+      "about": "asdfdas dasfa sdf dasf asd"
+    },
+    {
+      "id": 6,
+      "nombre": "Hugo",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "543354 23453 ",
+      "correo": "hugo@asdafsad.asd",
+      "pais": "asdfas",
+      "about": "asdfas gfsfg f"
+    },
+    {
+      "id": 7,
+      "nombre": "Gael Dueñas",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "435435",
+      "correo": "GAel@gmail.com",
+      "pais": "PEru",
+      "about": "adfasdfasd"
+    },
+    {
+      "id": 8,
+      "nombre": "Giacomo",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "43523",
+      "correo": "Peru",
+      "pais": "ADSFASD",
+      "about": "DCVZCX"
+    },
+    {
+      "id": 10,
+      "nombre": "afds",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "adsf",
+      "correo": "adsf",
+      "pais": "dsfa",
+      "about": "adsf"
+    },
+    {
+      "id": 11,
+      "nombre": "24352354",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "453324",
+      "correo": "432534",
+      "pais": "4523345",
+      "about": "43525"
+    },
+    {
+      "id": 12,
+      "nombre": "asdfsfda",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "asdfadsf",
+      "correo": "dsfadsfa",
+      "pais": "dsfadsfa",
+      "about": "dsfdsfa"
+    },
+    {
+      "id": 14,
+      "nombre": "jkljkljkl",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "jkljkl",
+      "correo": "jkljkl",
+      "pais": "kjljkl",
+      "about": "jklklj"
+    },
+    {
+      "id": 15,
+      "nombre": "876556787865",
+      "visualizaciones": "",
+      "url": "./img/silueta.jpg",
+      "telefono": "56785678678",
+      "correo": "8765687",
+      "pais": "875678",
+      "about": "7686785"
+    }
+  ]
+}
