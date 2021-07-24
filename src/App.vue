@@ -30,7 +30,7 @@ export default {
 
 <style>
 img:hover {
-	transform: scale(1.1);
+	transform: scale(3);
 	transition: 0.2s;
 	z-index: 1000;
 }

@@ -24,6 +24,12 @@ const routes = [
 		name: 'Contact',
 		component: Contact,
 	},
+
+	{
+		path: '/pokemones/:id',
+		name: 'Pokemones',
+		component: Contact,
+	},
 ];
 
 const router = createRouter({

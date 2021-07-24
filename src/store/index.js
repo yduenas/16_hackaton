@@ -1,10 +1,14 @@
 import { createStore } from 'vuex';
 
 //const URL = 'http://localhost:3000/contactos/';
-const URL = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20/';
+
+//const URL = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20/`;
 
 export default createStore({
 	state: {
+		URLX: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20/',
+		ini: 0,
+		fin: 20,
 		contactos: [],
 		contacto: {
 			//id: 1,
@@ -43,17 +47,37 @@ export default createStore({
 		crearContactoMutation(state, payload) {
 			state.contactos.push(payload);
 		},
+		nextContactoMutation(state, payload) {
+			state.ini += 20;
+			//	state.fin += parseInt(payload);
+		},
+		prevContactoMutation(state, payload) {
+			if ((state.ini = 0)) {
+			} else {
+				state.ini -= 20;
+				//		state.fin -= parseInt(payload);
+			}
+		},
 	},
 	actions: {
 		/* aca debo meter todas mis peticiones asincronas ASYNC */
-		async setContactosAction({ commit }) {
+		nextContactoAction({ commit }) {
+			commit('nextContactoMutation');
+		},
+		prevContactoAction({ commit }) {
+			commit('prevContactoMutation');
+		},
+
+		async setContactosAction({ commit, state }) {
 			//commit('setContactoMutation', contactos);
 			//console.log(contacto);
 			let arrayPokemones = [];
 
-			const data = await fetch(URL); //'http://localhost:3000/contactos'
+			const data = await fetch(
+				`https://pokeapi.co/api/v2/pokemon/?offset=${state.ini}&limit=${state.fin}/`
+			); //'http://localhost:3000/contactos'
 			let contactos = await data.json();
-
+			//	console.log(contactos);
 			contactos.results.forEach(async (pokemon) => {
 				const data = await fetch(pokemon.url); //'http://localhost:3000/contactos'
 				let contacto = await data.json();
@@ -62,9 +86,7 @@ export default createStore({
 				commit('setContactosMutation', arrayPokemones);
 				//console.log(contacto);
 			});
-
 			//	this.contactos = info;
-
 			console.log(arrayPokemones);
 		},
 		async deleteContactoAction({ commit }, id) {
@@ -89,6 +111,7 @@ export default createStore({
 			commit('obtenerContactoMutation', id);
 			//  console.log(id);
 		},
+
 		async actualizarContactoAction({ commit }, contacto) {
 			// commit('actualizarContactoMutation', contacto);
 

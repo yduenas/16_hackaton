@@ -1,20 +1,35 @@
 <template>
 	<div>
 		<div class="row">
-			<div class="col-6">
-				<input type="text" name="" id="" class="form-control" />
-			</div>
-			<div class="col-6">
+			<div class="col-3">
 				<input
-					type="button"
+					type="text"
 					name=""
 					id=""
-					class="btn btn-primary"
-					value="buscar"
+					class="form-control"
+					v-model="buscador"
+					placeholder="Buscar ..."
 				/>
+			</div>
+			<div class="col-3"></div>
+
+			<div class="col-6">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-end">
+						<li class="page-item">
+							<a class="page-link" @click="restar" href="#">Previous</a>
+						</li>
+
+						<li class="page-item">
+							<a class="page-link" @click="sumar" href="#">Next</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 		<br />
+
+		<!-- <div>{{ $data }}</div> -->
 
 		<div class="row">
 			<!--producto				
@@ -65,7 +80,7 @@
 
 			<div
 				class="item col-md-3 col-6"
-				v-for="(contacto, index) in contactos"
+				v-for="(contacto, index) in buscar"
 				:key="index"
 			>
 				<div class="p-2 product-block">
@@ -97,14 +112,22 @@
 					</div>
 
 					<div class="caption">
-						<h5>Nombre: {{ contacto.name }}</h5>
+						Nombre:
+						<h5 class="nombre">{{ contacto.name.toUpperCase() }}</h5>
 						<!--
 						<h6>{{ contacto.visualizaciones }} visualizaciones</h6>
 						-->
 
-						<div class="col">
+						<!-- <div class="col">
 							<router-link
 								:to="`/contactos/${contacto.id}`"
+								class="btn btn-green"
+								>Ver datos de POKEMON</router-link
+							>
+						</div> -->
+						<div class="col">
+							<router-link
+								:to="`/pokemones/${contacto.id}`"
 								class="btn btn-green"
 								>Ver datos de POKEMON</router-link
 							>
@@ -223,6 +246,8 @@ import { mapState, mapActions } from 'vuex';
 export default {
 	data() {
 		return {
+			buscador: '',
+
 			contacto: {
 				name: '',
 				url: '',
@@ -231,18 +256,41 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(['contactos']),
+		...mapState(['contactos', 'ini', 'fin']),
+
+		buscar() {
+			let poke = new RegExp(this.buscador, 'i');
+			return this.contactos.filter((name) => name.name.match(poke));
+		},
 	},
 	methods: {
 		...mapActions([
 			'deleteContactoAction',
 			'setContactosAction',
 			'actualizarContactoAction',
+			'nextContactoAction',
+			'prevContactoAction',
 		]),
 
 		editar(contacto) {
 			console.log(contacto);
 			this.contacto = { ...contacto };
+		},
+		sumar() {
+			//alert(this.ini);
+			//	alert(this.fin);
+			this.nextContactoAction(20);
+			this.setContactosAction();
+			//alert(this.ini);
+			//	alert(this.fin);
+		},
+		restar() {
+			// alert(this.ini);
+			// alert(this.fin);
+			this.prevContactoAction(20);
+			this.setContactosAction();
+			// alert(this.ini);
+			// alert(this.fin);
 		},
 	},
 	created() {
@@ -368,4 +416,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.nombre {
+	color: red;
+}
+</style>

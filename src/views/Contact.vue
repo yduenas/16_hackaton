@@ -2,20 +2,25 @@
 	<div class="container">
 		<h1>POKEMON - {{ $route.params.id }}</h1>
 		<section>
-			<p>Informacion del POKEMON</p>
-			<h2 @click="detalle">Nombre: {{ contacto.name }}</h2>
-			<!--
+			<div class="row">
+				<div class="col-6 ">
+					<p>Informacion del POKEMON</p>
+					<h2 @click="detalle">Nombre: {{ contacto.name }}</h2>
+					<!--
 			<img alt="Vue logo" :src="contacto.url" />
 			-->
-			<img alt="Vue logo" :src="contacto.sprites.front_default" />
-
-			<p>Tipo: {{ contacto.types.[0].type.name }}</p>
-			<p>Habilidades: {{ contacto.abilities.[0].ability.name }}</p>
-			<!--
+					<div style="text-align:center">
+						<img alt="Vue logo" :src="contacto.sprites.front_default" />
+					</div>
+					<p>Tipo: {{ contacto.types.[0].type.name }}</p>
+					<p>Habilidades: {{ contacto.abilities.[0].ability.name }}</p>
+					<!--
 			<router-link :to="`/contactos/`">Regresar</router-link>
 			-->
-			<div class="col-6">
-				<router-link :to="`/`" class="btn btn-green">Regresar</router-link>
+					<div class="col-6">
+						<router-link :to="`/`" class="btn btn-green">Regresar</router-link>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
